@@ -37,10 +37,11 @@ public class LoginServlet extends HttpServlet {
             // Redirigir según el tipo de usuario
             switch (usuario.getTipoUsuario()) {
                 case "Administrador":
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("dashboard.jsp");
                     break;
                 case "Profesor":
-                    response.sendRedirect("profesor.jsp");
+                    response.sendRedirect(request.getContextPath() + "/prestamo"); // Asegúrate de que "/prestamo" es la URL mapeada al PrestamoServlet
+
                     break;
                 case "Alumno":
                     response.sendRedirect("alumno.jsp");
