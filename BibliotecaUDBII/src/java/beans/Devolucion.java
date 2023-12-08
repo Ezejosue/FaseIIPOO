@@ -5,30 +5,42 @@
  */
 package beans;
 
-
 import java.sql.Date;
 
 /**
  *
  * @author kevin
  */
-public class devoluciones {
+public class Devolucion {
+
     private int id;
     private int idprestamo;
+    private int idUsuario;
     private Date fechadevolucion;
-    private EstadoDevolucion estadodevolucion;
-    private String comentarios;   
-    
-    public devoluciones () {
+    private String estadodevolucion;
+    private String comentarios;
+
+    public Devolucion() {
     }
 
-    public devoluciones(int id, int idprestamo, Date fechadevolucion, EstadoDevolucion estadodevolucion, String comentarios) {
+    public Devolucion(int id, int idprestamo, int idUsuario, Date fechadevolucion, String estadodevolucion, String comentarios) {
         this.id = id;
         this.idprestamo = idprestamo;
+        this.idUsuario = idUsuario;
         this.fechadevolucion = fechadevolucion;
         this.estadodevolucion = estadodevolucion;
         this.comentarios = comentarios;
     }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+   
 
     public int getId() {
         return id;
@@ -54,11 +66,11 @@ public class devoluciones {
         this.fechadevolucion = fechadevolucion;
     }
 
-    public EstadoDevolucion getEstadodevolucion() {
+    public String getEstadodevolucion() {
         return estadodevolucion;
     }
 
-    public void setEstadodevolucion(EstadoDevolucion estadodevolucion) {
+    public void setEstadodevolucion(String estadodevolucion) {
         this.estadodevolucion = estadodevolucion;
     }
 
@@ -74,12 +86,5 @@ public class devoluciones {
     public String toString() {
         return "devoluciones{" + "id=" + id + ", idprestamo=" + idprestamo + ", fechadevolucion=" + fechadevolucion + ", estadodevolucion=" + estadodevolucion + ", comentarios=" + comentarios + '}';
     }
-    
-    
-    
-    
-    
+
 }
-
-
-
