@@ -24,9 +24,8 @@ public class EliminarUsuariosDao {
             ps = conn.prepareStatement(eliminar_Usuarios);
             ps.setInt(1, usuario.getId());
             ps.executeUpdate();
-            System.out.println("Datos eliminados correctamente");
         } catch (Exception e) {
-            System.out.println(e);
+
         }finally{
             conexionDB.close(conn);
         }

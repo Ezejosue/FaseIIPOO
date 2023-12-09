@@ -32,6 +32,14 @@ public class Usuario {
         this.mora = mora;
     }
 
+    public Usuario(String nombre, String correo, String contrasena, String tipoUsuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.tipoUsuario = tipoUsuario;
+    }
+
     public int getId() {
         return id;
     }

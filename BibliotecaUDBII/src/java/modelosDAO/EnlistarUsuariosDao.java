@@ -19,14 +19,18 @@ import java.util.ArrayList;
 public class EnlistarUsuariosDao {
 
     private final String enlistar_Usuarios = "SELECT id,nombre,correo,contrasena,tipo_usuario,mora FROM usuarios";
+    conexionDB Conn;
+
+    public EnlistarUsuariosDao() {
+        Conn = new conexionDB();
+    }
 
     public ArrayList<Usuario> obtenerUsuarios() {
-        Connection conn = null;
+        Connection conn = Conn.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             ArrayList<Usuario> todos_Usuarios = new ArrayList<>();
-            String sql = "SELECT id,nombre,correo,contrasena,tipo_usuario,mora FROM usuarios";
             ps = conn.prepareStatement(enlistar_Usuarios);
             rs = ps.executeQuery();
             while (rs.next()) {

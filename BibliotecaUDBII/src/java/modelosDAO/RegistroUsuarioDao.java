@@ -13,11 +13,15 @@ import java.sql.ResultSet;
 public class RegistroUsuarioDao {
 
     private static final String Insertar_Usuarios_Nuevos = "INSERT INTO `usuarios`  (`nombre`, `correo`, `contrasena`, `tipo_usuario`) VALUES (?, ?, ?, ?)";
+    conexionDB Conn;
 
-    public boolean ingresarUsuario() {
-        Connection conn = null;
+    public RegistroUsuarioDao() {
+        Conn = new conexionDB();
+    }
+
+    public boolean ingresarUsuario(Usuario usuario) {
+        Connection conn = Conn.getConnection();
         PreparedStatement ps = null;
-        Usuario usuario = null;
         try {
             ps = conn.prepareStatement(Insertar_Usuarios_Nuevos);
             ps.setString(1, usuario.getNombre());
@@ -32,4 +36,5 @@ public class RegistroUsuarioDao {
             conexionDB.close(conn);
         }
     }
+
 }
