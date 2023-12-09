@@ -41,7 +41,7 @@
           </li>
         
            <li class="nav-item">
-              <a href="logout" class="nav-link"> <i class="nav-icon fas fa-power-off"></i>  <p>Cerrar Sesión</p> </a>
+              <a href="${pageContext.request.contextPath}/logout" class="nav-link"> <i class="nav-icon fas fa-power-off"></i>  <p>Cerrar Sesión</p> </a>
           </li>
         </ul>
       </nav>

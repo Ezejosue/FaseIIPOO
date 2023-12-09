@@ -53,7 +53,28 @@
           </div>
         </div>
         <div class="card-body">
-          test
+          <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico:</label>
+          <input type="email" class="form-control" id="correo" name="correo" required>
+        </div>
+        <div class="mb-3">
+          <label for="contrasena" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+        </div>
+        <div class="mb-3">
+          <label for="tipoUsuario" class="form-label">Tipo de usuario:</label>
+          <select class="form-select" id="tipoUsuario" name="tipoUsuario" required>
+            <option value="admin">Admin</option>
+            <option value="invitado">Invitado</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
